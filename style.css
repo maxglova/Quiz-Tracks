@@ -1,0 +1,29 @@
+.quiz-container {
+    width: 100%;
+    max-width: 566px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+label.btn-labels {
+    display: flex;
+    width: 30%;
+    font-weight: bold;
+    margin: 10px 10px 10px 0px;
+    width: 134px; 
+    text-align: center;
+}
+
+.btn-labels input{
+    position: absolute;
+    opacity: 0;
+}
+
+span.checkmark{
+    position: absolute;
+    border: 1px solid #00a9f7;
+    width: fit-content;
+    width: 134px; 
+    padding: 10px 20px;
+}
