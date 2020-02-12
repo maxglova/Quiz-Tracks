@@ -1,3 +1,6 @@
-//ToDo
-//Define Variables: Role, Level of expertice, PDFs
-//Target the Selection Bubbles
+// Quiz Tracks
+// Originally created for the 2020 Pantheon site
+
+function generatePdfs() {
+    let jobRoles = 
+}

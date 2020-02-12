@@ -9,34 +9,43 @@
         <title>Quiz Tracks</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet/less" type="text/css" href="/style-2.less" />
     </head>
     <body>
-            <h1>Fill out the damn quiz</h1>
+            <h1>Try Our Quiz Track</h1>
             <div class="quiz-container">
-                <label class="btn-labels">Accounting
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="btn-labels">Call Center
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="btn-labels">Field
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="btn-labels">IT
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="btn-labels">Operations
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
+                <div id="question-wrap">
+                    <h3 class="quiz-question-label">Question 1</h3>
+                    <div class="question-container">
+                        <h3 class="question">What is Your Role?</h3>
+                        <div id="roles-container">
+                            <div class="btn-container">
+                                <input type="radio" id="accounting-btn" name="jobRoles" value="accounting" checked>
+                                <label for="accounting" class="btn-labels">Accounting</label>
+                            </div>
+                            <div class="btn-container">
+                                <input type="radio" id="call-center-btn" name="jobRoles" value="call-center">
+                                <label for="call-center" class="btn-labels">Call Center</label>
+                            </div>
+                            <div class="btn-container">
+                                <input type="radio" id="field-btn" name="jobRoles" value="field">
+                                <label for="field" class="btn-labels">Field</label>
+                            </div>
+                            <div class="btn-container">
+                                <input type="radio" id="IT-btn" name="jobRoles" value="IT">
+                                <label for="IT" class="btn-labels">IT</label>
+                            </div>
+                            <div class="btn-container">
+                                <input type="radio" id="operations-btn" name="jobRoles" value="operations">
+                                <label for="operations" class="btn-labels">Operations</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
-        <script src="quiz-tracks.js" async defer></script>
+
+            <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+        <script src="/quiz-tracks.js" async defer></script>
     </body>
 </html>
 

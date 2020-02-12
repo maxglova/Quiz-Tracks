@@ -1,0 +1,96 @@
+:root {
+    --blueprint-blue: #0553EF;
+    --inactive-gray: #6d6d6d;
+
+    body{
+        font-family: barlow;
+    
+        h1, h2, h3, h4, h5, h6{
+            margin: 0px;
+        }
+    
+        .quiz-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 566px;
+            padding: 10px;
+            border: solid 1px var(--blueprint-blue);
+            margin-top: 20px;
+    
+            #question-wrap{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+    
+                .quiz-question-label{
+                    font-weight: bold;
+                    letter-spacing: .58px;
+                    margin-top: 0px;
+                    margin-bottom: 5px;
+                }
+    
+                .question-container{
+                    border: 2px dashed var(--blueprint-blue);
+                    padding: 5px;
+    
+                    .question{
+                        font-weight: normal;
+                        font-size: 16px;
+                    }
+    
+                    #roles-container{
+                        
+    
+                        label {
+                            width: 134px; 
+                            position: relative;
+                            text-align: center;
+                            line-height: 28px;
+                            border: 1px solid var(--inactive-gray);
+                            display: inline-block;
+                            margin-top: 5px;
+                            color: var(--inactive-gray);
+
+                            &:active {
+                                color: var(--blueprint-blue);
+                                border-color: var(--blueprint-blue);
+                            }
+                            &:checked {
+                                color: var(--blueprint-blue);
+                                border-color: var(--inactive-gray);
+                            }
+        
+                            input[type="radio"] {
+                                display: ;
+                            }
+
+                            label+input[type="radio"]:checked{
+                                border-color: var(--blueprint-blue);
+                                color: var(--blueprint-blue);
+                                background-color: green;
+                                label{
+                                    border-color: var(--blueprint-blue);
+                                }
+                            }
+
+                            .checkmark{
+                                display: none;
+                            }
+                        }
+
+                        label:nth-child(4) {
+                            margin-top: 10px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  .roles-container label + input[type="radio"]:checked {
+    color: red;
+  }
