@@ -20,68 +20,115 @@
             border: solid 1px var(--blueprint-blue);
             margin-top: 20px;
     
-            #question-wrap{
+            #questions-wrap{
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
     
-                .quiz-question-label{
-                    font-weight: bold;
-                    letter-spacing: .58px;
-                    margin-top: 0px;
-                    margin-bottom: 5px;
-                }
-    
-                .question-container{
-                    border: 2px dashed var(--blueprint-blue);
-                    padding: 5px;
-    
-                    .question{
-                        font-weight: normal;
-                        font-size: 16px;
+                form{
+                    display: flex;
+                    flex-direction: column;
+
+                    .quiz-question-label{
+                        font-weight: bold;
+                        letter-spacing: .58px;
+                        margin-top: 0px;
+                        margin-bottom: 5px;
                     }
-    
-                    #roles-container{
+        
+                    .question-wrapper{
+                        border: 2px dashed var(--blueprint-blue);
+                        padding: 5px;
+                        margin-bottom: 20px;
+        
+                        fieldset{
+                            border: none;
+
+                        /* Styling for Radio Btns */
+                            .question{
+                                font-weight: normal;
+                                font-size: 16px;
+                            }
+            
+                            .question-container{
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                
+                                .btn-container{
+                                    display: flex; 
+                                    margin: 10px;
+                                    width: 100%;
+                                    max-width: 134px;
+                                    padding-right: 10px;
+        
+                                    input[type="radio"] {
+                                        position: absolute;
+                                        opacity: 0;
+                                        width: 150px;
+                                        height: 25px;
+                                        z-index: 100;
+                                    }
+            
+                                    label{
+                                        text-align: center;
+                                        color: var(--inactive-gray);
+                                        min-width: 134px;
+                                        border: 1px solid var(--inactive-gray);
+                                        padding: 5px 10px;
+                                        color: var(--inactive-gray);
+                                    }
+            
+                                    input[type="radio"]:checked + label{
+                                        color: var(--white);
+                                        background-color: var(--blueprint-blue);
+                                        letter-spacing: .38px;
+                                    }
+                                }
+        
+                                .btn-container:nth-child(1),
+                                .btn-container:nth-child(4),{
+                                    margin-left: 0px;
+                                }
+        
+                                .btn-container:nth-child(4),
+                                .btn-container:nth-child(5){
+                                    margin-top: 0px;
+                                    margin-bottom: 5px;
+                                }
+                                
+                            }
+                        }
+                    }
+                    .submit-container{
+                        align-self: flex-end;
                         display: flex;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        
-                        .btn-container{
-                            margin: 10px;
-                            width: 134px;
+                        margin-right: 10px;
 
-                            input[type="radio"] {
-                                position: absolute;
-                                opacity: 0;
-                                width: 134px;
-                                z-index: 100;
-                            }
-    
-                            label{
-                                text-align: center;
-                                color: var(--inactive-gray);
-                                min-width: 134px;
-                                border: 1px solid var(--inactive-gray);
-                                padding: 5px 10px;
-                                color: var(--inactive-gray);
-                            }
-    
-                            input[type=radio]:focus + label {
-                                outline: var(--blueprint-blue) auto 3px;
-                            }
-    
-                            input[type="radio"]:checked + label{
-                                color: var(--white);
-                                background-color: var(--blueprint-blue);
-                                letter-spacing: .38px;
-                            }
+
+                        input#submit{
+                            color: var(--blueprint-blue);
+                            border: none;
+                            font-weight: bold;
+                        }
+                        .material-icons{
+                            color: var(--blueprint-blue);
+                        }
+                    }
+                    .submit-container:hover{
+                        .input#submit{
+                            font-size: 28px;
                         }
 
-                        .btn-container:nth-child(1),
-                        .btn-container:nth-child(4),{
-                            margin-left: 0px;
+                        .material-icons{
+                            position: relative;
+                            left: 10px;
+                            animation: submit-arrow .5s ease-in;
                         }
-                        
+                        @keyframes submit-arrow {
+                            from {left: 0px;}
+                            to {left: 10px;}
+                          }
                     }
                 }
             }

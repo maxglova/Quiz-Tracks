@@ -14,36 +14,68 @@
     <body>
             <h1>Try Our Quiz Track</h1>
             <div class="quiz-container">
-                <div id="question-wrap">
-                    <h3 class="quiz-question-label">Question 1</h3>
-                    <div class="question-container">
-                        <h3 class="question">What is Your Role?</h3>
-                        <div id="roles-container">
-                            <div class="btn-container">
-                                <input type="radio" id="accounting-btn" name="jobRoles" value="accounting" checked>
-                                <label for="accounting" class="btn-labels">Accounting</label>
-                            </div>
-                            <div class="btn-container">
-                                <input type="radio" id="call-center-btn" name="jobRoles" value="call-center">
-                                <label for="call-center" class="btn-labels">Call Center</label>
-                            </div>
-                            <div class="btn-container">
-                                <input type="radio" id="field-btn" name="jobRoles" value="field">
-                                <label for="field" class="btn-labels">Field</label>
-                            </div>
-                            <div class="btn-container">
-                                <input type="radio" id="IT-btn" name="jobRoles" value="IT">
-                                <label for="IT" class="btn-labels">IT</label>
-                            </div>
-                            <div class="btn-container">
-                                <input type="radio" id="operations-btn" name="jobRoles" value="operations">
-                                <label for="operations" class="btn-labels">Operations</label>
-                            </div>
+                <div id="questions-wrap">
+                    <form methon="post" action="#" onSubmit="alert(`I'm stealing all your data MUWHAHAHAHAHAHAHAH!`); return false;" >
+                        <h3 class="quiz-question-label">Question 1</h3>
+                        <div class="question-wrapper">
+                            <fieldset>
+                                <h3 class="question">What is your Role?</h3>
+                                <div class="question-container">
+                                    <div class="btn-container">
+                                        <input type="radio" id="accounting" name="jobRoles" value="accounting" onChange="updatePdf()" checked>
+                                        <label for="accounting" class="btn-labels">Accounting</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="call-center" name="jobRoles" value="call-center" onChange="updatePdf()">
+                                        <label for="call-center" class="btn-labels">Call Center</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="field" name="jobRoles" value="field" onChange="updatePdf()">
+                                        <label for="field" class="btn-labels">Field</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="IT" name="jobRoles" value="IT" onChange="updatePdf()">
+                                        <label for="IT" class="btn-labels">IT</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="operations" name="jobRoles" value="operations" onChange="updatePdf()">
+                                        <label for="operations" class="btn-labels">Operations</label>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </div>
-                    </div>
+                        <h3 class="quiz-question-label">Question 2</h3>
+                        <div class="question-wrapper">
+                            <fieldset>
+                                <h3 class="question">What is your level?</h3>
+                                <div class="question-container">
+                                    <div class="btn-container">
+                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <label for="operations" class="btn-labels">Beginner</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <label for="operations" class="btn-labels">Intermediate</label>
+                                    </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <label for="operations" class="btn-labels">Advance</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="submit-container">
+                            <input id="submit" type="submit" value="Submit">
+                            <i class="material-icons">arrow_forward</i>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <div id="result"></div>
 
+            <!-- Material Design Icon script -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <!-- LESS script -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
         <script src="/quiz-tracks.js" async defer></script>
     </body>
