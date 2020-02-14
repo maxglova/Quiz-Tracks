@@ -1,38 +1,75 @@
 // Quiz Tracks
 // Originally created for the 2020 Pantheon site
 
-// var roleSelected = document.querySelector(`input[name = 'jobRoles']:checked`).value;
-// console.log(`${roleSelected}`);
+// Helpers
+
+let submitBtn = document.getElementById('submit');
+// Role Radio Btns
+let accounting = document.getElementById('accounting');
+let callCenter = document.getElementById('call-center');
+let field = document.getElementById('field');
+let iT = document.getElementById('IT');
+let operations = document.getElementById('operations');
+
+// Level Radio Btns
+let beginner = document.getElementById('beginner');
+let intermediate = document.getElementById('intermediate');
+let advanced = document.getElementById('advanced');
+
+// PDFs
+let accounting1 = 'https://eloquentjavascript.net/Eloquent_JavaScript.pdf'
 
 
-// var radios = document.getElementsByName('jobRoles');
+// Generates the PDF based on Quiz Answers
+// function generatePdfs() {
+//     if(accounting.checked == true && beginner.checked == true) {
+//         alert( `You're a beginner in accounting`);
+//     } else if(accounting.checked == true && intermediate.checked == true) {
+//         alert( `You're a intermediate in accounting`);
+//     } else if(accounting.checked == true && advanced.checked == true) {
+//         alert( `You're an Advanced accountant`);
+//     } else {
+//         alert(`You're a looser`);
+//     }
+// };
 
-// if (document.getElementById('accounting-btn').checked) {
-//     rate_value = document.getElementById('accounting-btn').value;
-//   } else if (document.getElementById('call-center-btn').checked) {
-//     rate_value = document.getElementById('call-center-btn').value;
-//   } else if (document.getElementById('field-btn').checked) {
-//     rate_value = document.getElementById('field-btn').value;
-//   } else if (document.getElementById('IT-btn').checked) {
-//     rate_value = document.getElementById('IT-btn').value;
-//   } else if (document.getElementById('operations-btn').checked) {
-//     rate_value = document.getElementById('operations-btn').value;
-//   } else {
-//       rate_value = undefined;
-//   }
-
-//   console.log(`${rate_value}`)
-
-function updatePdf() {
-    let jobRole = undefined;
-    let proficiency = undefined;
-    
-    function getRole() {
-        if(document.getElementById('accounting').checked) {
-            let jobRole = document.getElementById('accounting').value
-        } else {
-            let jobRole = undefined;
-        }
-        console.log(`${jobRoles}`);
-    }
+// Displays Thank You Content
+function thankYouContent() {
+    let resultsContainer = document.getElementById('results-container');
+    resultsContainer.style.display = 'block';
 }
+
+function hideQuestionForm() {
+    // Hides the previous content
+    let questionsContainer = document.getElementById('questions-wrap');
+    resultsContainer.style.display = 'none';
+}
+
+// Triggers PDF Downloader
+function pdfDownloader(){
+    let a = document.createElement('a');
+
+    let linkText = document.createTextNode(`Click Me NoW!`);
+
+    a.appendChild(linkText);
+    // Set the title. 
+    a.title = "This is Link";  
+
+    // Set the download attribute, and default file name
+    // a.setAttribute('download', 'Pantheon Suggested Schedule');
+    
+    // Set the href property. 
+    a.href = accounting1;  
+        
+    // Append the anchor element to the body. 
+    document.getElementById('result').appendChild(a);
+
+    document.getElementById('submit').style.pointerEvents = 'none';
+
+    //generatePdfs();
+
+    thankYouContent();
+
+}
+
+submitBtn.addEventListener('click', pdfDownloader)

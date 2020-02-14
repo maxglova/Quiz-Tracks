@@ -15,30 +15,30 @@
             <h1>Try Our Quiz Track</h1>
             <div class="quiz-container">
                 <div id="questions-wrap">
-                    <form methon="post" action="#" onSubmit="alert(`I'm stealing all your data MUWHAHAHAHAHAHAHAH!`); return false;" >
+                    <form methon="post" action="#" >
                         <h3 class="quiz-question-label">Question 1</h3>
                         <div class="question-wrapper">
                             <fieldset>
                                 <h3 class="question">What is your Role?</h3>
                                 <div class="question-container">
                                     <div class="btn-container">
-                                        <input type="radio" id="accounting" name="jobRoles" value="accounting" onChange="updatePdf()" checked>
+                                        <input type="radio" id="accounting" name="jobRoles" value="accounting"  checked>
                                         <label for="accounting" class="btn-labels">Accounting</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="call-center" name="jobRoles" value="call-center" onChange="updatePdf()">
+                                        <input type="radio" id="call-center" name="jobRoles" value="call-center" >
                                         <label for="call-center" class="btn-labels">Call Center</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="field" name="jobRoles" value="field" onChange="updatePdf()">
+                                        <input type="radio" id="field" name="jobRoles" value="field" >
                                         <label for="field" class="btn-labels">Field</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="IT" name="jobRoles" value="IT" onChange="updatePdf()">
+                                        <input type="radio" id="IT" name="jobRoles" value="IT" >
                                         <label for="IT" class="btn-labels">IT</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="operations" name="jobRoles" value="operations" onChange="updatePdf()">
+                                        <input type="radio" id="operations" name="jobRoles" value="operations" >
                                         <label for="operations" class="btn-labels">Operations</label>
                                     </div>
                                 </div>
@@ -50,34 +50,38 @@
                                 <h3 class="question">What is your level?</h3>
                                 <div class="question-container">
                                     <div class="btn-container">
-                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <input type="radio" id="beginner" name="proficiency" value="beginner" >
                                         <label for="operations" class="btn-labels">Beginner</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <input type="radio" id="intermediate" name="proficiency" value="intermediate" >
                                         <label for="operations" class="btn-labels">Intermediate</label>
                                     </div>
                                     <div class="btn-container">
-                                        <input type="radio" id="beginner" name="proficiency" value="beginner" onChange="updatePdf()">
+                                        <input type="radio" id="advanced" name="proficiency" value="advanced" >
                                         <label for="operations" class="btn-labels">Advance</label>
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
                         <div class="submit-container">
-                            <input id="submit" type="submit" value="Submit">
+                            <button id="submit" type="submit" value="Submit">Submit</button>
                             <i class="material-icons">arrow_forward</i>
                         </div>
                     </form>
                 </div>
+                <div id="results-container">
+                    <h2>Thanks You!</h2>
+                    <p>Your custom agenda will download automatically.</p>
+                    <span id="result"></span>
+                </div>
             </div>
-            <div id="result"></div>
 
             <!-- Material Design Icon script -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <!-- LESS script -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
-        <script src="/quiz-tracks.js" async defer></script>
+            <script src="/quiz-tracks.js" async defer></script>
     </body>
 </html>
 
