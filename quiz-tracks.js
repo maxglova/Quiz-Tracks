@@ -1,8 +1,8 @@
 // Quiz Tracks
 // Originally created for the 2020 Pantheon site
 
-// Helpers
 
+// Submit BTN
 let submitBtn = document.getElementById('submit');
 // Role Radio Btns
 let accounting = document.getElementById('accounting');
@@ -16,22 +16,95 @@ let beginner = document.getElementById('beginner');
 let intermediate = document.getElementById('intermediate');
 let advanced = document.getElementById('advanced');
 
+// Form
+let form = document.getElementById('question-form');
+
 // PDFs
-let accounting1 = 'https://eloquentjavascript.net/Eloquent_JavaScript.pdf'
+let accounting1 = './ST-directions-HQ.pdf'
+
+// Results Elements
+let a = document.createElement('a');
+let linkText = document.createTextNode(`Your suggested track list!`);
 
 
 // Generates the PDF based on Quiz Answers
-// function generatePdfs() {
-//     if(accounting.checked == true && beginner.checked == true) {
-//         alert( `You're a beginner in accounting`);
-//     } else if(accounting.checked == true && intermediate.checked == true) {
-//         alert( `You're a intermediate in accounting`);
-//     } else if(accounting.checked == true && advanced.checked == true) {
-//         alert( `You're an Advanced accountant`);
-//     } else {
-//         alert(`You're a looser`);
-//     }
-// };
+function generatePdfs() {
+    // Accounting
+    if(accounting.checked == true && beginner.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(accounting.checked == true && intermediate.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(accounting.checked == true && advanced.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else 
+    // Call Center
+    if(callCenter.checked == true && beginner.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(callCenter.checked == true && intermediate.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(callCenter.checked == true && advanced.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else 
+    // Field
+    if(field.checked == true && beginner.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(field.checked == true && intermediate.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(field.checked == true && advanced.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else 
+    // IT
+    if(iT.checked == true && beginner.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(IT.checked == true && intermediate.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(IT.checked == true && advanced.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else 
+    // Operations
+    if(operations.checked == true && beginner.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(operations.checked == true && intermediate.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+    } else if(operations.checked == true && advanced.checked == true) {
+        hideQuestionForm();
+        thankYouContent();
+        return a.href = accounting1;
+        
+    } 
+    // Return Error Message
+    else {
+        alert(`Please complete the form to generate a suggested track list LOOSER!`);
+    }
+};
 
 // Displays Thank You Content
 function thankYouContent() {
@@ -41,35 +114,26 @@ function thankYouContent() {
 
 function hideQuestionForm() {
     // Hides the previous content
-    let questionsContainer = document.getElementById('questions-wrap');
-    resultsContainer.style.display = 'none';
+    let questionsContainer = document.getElementById('question-form');
+    questionsContainer.style.display = 'none';
 }
 
 // Triggers PDF Downloader
 function pdfDownloader(){
-    let a = document.createElement('a');
-
-    let linkText = document.createTextNode(`Click Me NoW!`);
 
     a.appendChild(linkText);
     // Set the title. 
     a.title = "This is Link";  
 
     // Set the download attribute, and default file name
-    // a.setAttribute('download', 'Pantheon Suggested Schedule');
+    a.setAttribute('download', 'Pantheon Suggested Schedule');
     
     // Set the href property. 
-    a.href = accounting1;  
+    a.href = generatePdfs();  
         
     // Append the anchor element to the body. 
     document.getElementById('result').appendChild(a);
-
-    document.getElementById('submit').style.pointerEvents = 'none';
-
-    //generatePdfs();
-
-    thankYouContent();
-
+    
 }
 
 submitBtn.addEventListener('click', pdfDownloader)
