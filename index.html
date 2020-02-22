@@ -13,7 +13,7 @@
     </head>
     <body>
             <h1>Try Our Quiz Track</h1>
-            <div class="quiz-container">
+            <form class="quiz-container">
                 <div id="questions-wrap">
                     <div id="question-form">
                         <h3 class="quiz-question-label">Question 1</h3>
@@ -41,6 +41,10 @@
                                         <input type="radio" id="operations" name="jobRoles" value="operations" >
                                         <label for="operations" class="btn-labels">Operations</label>
                                     </div>
+                                    <div class="btn-container">
+                                        <input type="radio" id="owner" name="jobRoles" value="owner" >
+                                        <label for="owner" class="btn-labels">Owner</label>
+                                    </div>
                                 </div>
                             </fieldset>
                         </div>
@@ -52,20 +56,23 @@
                                     <div class="btn-container">
                                         <input type="radio" id="beginner" name="proficiency" value="beginner" >
                                         <label for="operations" class="btn-labels">Beginner</label>
+                                        <span class="tooltip" id="tool-tip-1">this is some text</span>
                                     </div>
                                     <div class="btn-container">
                                         <input type="radio" id="intermediate" name="proficiency" value="intermediate" >
                                         <label for="operations" class="btn-labels">Intermediate</label>
+                                        <span class="tooltip"></span>
                                     </div>
                                     <div class="btn-container">
                                         <input type="radio" id="advanced" name="proficiency" value="advanced" >
                                         <label for="operations" class="btn-labels">Advance</label>
+                                        <span class="tooltip"></span>
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
                         <div class="submit-container">
-                            <button id="submit">Submit</button>
+                            <div id="submit">Submit</div>
                             <i class="material-icons">arrow_forward</i>
                         </div>
                     </div>
@@ -75,7 +82,7 @@
                         <span id="result"></span>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <!-- Material Design Icon script -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
