@@ -200,11 +200,75 @@ function tooltipHover() {
         } else if (operations.checked){
             tooltip.innerText = operationsTip.beginner;
             tooltip.style.display = 'block';
+        } else if (owner.checked){
+            tooltip.innerText = operationsTip.beginner;
+            tooltip.style.display = 'block';
+        }
+
+    })
+    beginner.addEventListener('mouseout', function() {
+        tooltip.style.display = 'none';
+    })
+    
+    // Intermediate Tool Tips
+    intermediate.addEventListener('mouseover', function(){
+        if(accounting.checked){
+            iToolTip.innerText = accountingTip.intermediate;
+            iToolTip.style.display = 'block';
+            console.log(accountingTip.intermediate);
+        } else if (callCenter.checked){
+            iToolTip.innerText = callCenterTip.intermediate;
+            iToolTip.style.display = 'block';
+        } else if (field.checked){
+            iToolTip.innerText = fieldTip.intermediate;
+            iToolTip.style.display = 'block';
+        } else if (iT.checked){
+            iToolTip.innerText = itTip.intermediate;
+            iToolTip.style.display = 'block';
+        } else if (operationsTip.checked){
+            iToolTip.innerText = operationsTip.intermediate;
+            iToolTip.style.display = 'block';
+        } else if (operations.checked){
+            iToolTip.innerText = operationsTip.intermediate;
+            iToolTip.style.display = 'block';
+        } else if (owner.checked){
+            iToolTip.innerText = operationsTip.intermediate;
+            iToolTip.style.display = 'block';
+        }
+
+    })
+    intermediate.addEventListener('mouseout', function() {
+        iToolTip.style.display = 'none';
+    })
+
+    // Advanced Tool Tip
+    advanced.addEventListener('mouseover', function(){
+        if(accounting.checked){
+            aToolTip.innerText = accountingTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (callCenter.checked){
+            aToolTip.innerText = callCenterTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (field.checked){
+            aToolTip.innerText = fieldTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (iT.checked){
+            aToolTip.innerText = itTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (operationsTip.checked){
+            aToolTip.innerText = operationsTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (operations.checked){
+            aToolTip.innerText = operationsTip.advanced;
+            aToolTip.style.display = 'block';
+        } else if (owner.checked){
+            aToolTip.innerText = operationsTip.advanced;
+            aToolTip.style.display = 'block';
         }
 
     });
-    beginner.addEventListener('mouseout', function() {
-        tooltip.style.display = 'none';
+    advanced.addEventListener('mouseout', function() {
+        aToolTip.style.display = 'none';
     })
 }
 tooltipHover();
