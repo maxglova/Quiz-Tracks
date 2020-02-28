@@ -4,6 +4,7 @@
 
 // Submit BTN
 let submitBtn = document.getElementById('submit');
+
 // Role Radio Btns
 let accounting = document.getElementById('accounting');
 let callCenter = document.getElementById('call-center');
@@ -34,14 +35,63 @@ let aToolTip = document.getElementById('tool-tip-3');
 
 
 // Tooltips
-const tooltips = [
-    {beginner: 'Batch, post, and export invoices', intermediate: 'Process payments and refunds', advanced: 'Run payroll',},
-    {beginner: 'Answer phones and book appointments', intermediate: 'Assign technicians to jobs', advanced: 'Take down job information',},
-    {beginner: 'Build quotes for customers', intermediate: 'Service equipment ', advanced: 'Work on call or after hours',},
-    {beginner: 'Oversee systemsd', intermediate: 'Manage software implementation and updates', advanced: 'Monitor new and existing integrations ',},
-    {beginner: 'Manage inventory', intermediate: 'Run marketing campaigns', advanced: 'Build or update the Pricebook',},
-    {beginner: 'Manage the business', intermediate: 'Track company metrics and performance', advanced: 'Serve as a president or general manager',}
+const roleTooltips = [
+    {accounting: [
+        'Manage invoices', 
+        'Process payments', 
+        'Run payroll'
+    ]
+    },
+    {callCenter: [
+        'Book jobs', 
+        'Assign technicians', 
+        'Answer phones'
+    ]
+    },
+    {Field: [
+        'Install units', 
+        'Service equipment ', 
+        'Complete repairs'
+    ]
+    },
+    {IT: [
+        'Oversee systems', 
+        'Manage software', 
+        'Monitor integrations'
+    ]
+    },
+    {Operations: [
+        'Manage inventory', 
+        'Oversee marketing', 
+        'Update the Pricebook'
+    ]
+    },
+    {Owner: [
+        'Manage the business', 
+        'Track performance', 
+        'Review reports'
+    ]
+    }
 ]
+
+const levelTooltips = [ 
+    {beginner: [
+        'Learn the basics',
+        'Identify workflows',
+        'Set business goals'
+    ]},
+    {intermediate: [
+        'Test new features',
+        'Discover capabilities',
+        'Tailor processes'
+    ]},
+    {advance: [
+        'Look for growth',
+        'Validate processes',
+        'Measure success'
+    ]},
+]
+
 
 
 // Generates the PDF based on Quiz Answers
@@ -168,15 +218,45 @@ function pdfDownloader(){
     
 }
 
+
+
+
+
+
+function getElemId() {
+
+    function getId(obj){
+        console.log(obj.currentTarget.id);
+    }
+
+    let inputs = document;
+    inputs.onmouseover = function(e) {
+        var targ;
+        if (!e) var e = window.event;
+        if (e.target) targ = e.target;
+        else if (e.srcElement) targ = e.srcElement;
+        if (targ.nodeType == 3) // defeat Safari bug
+            targ = targ.parentNode;
+        console.log(targ.id);
+    }
+}
+
+getElemId();
+
+
 // Tooltip Hover
 function tooltipHover() {
     // Object Variables
-    let accountingTip = tooltips[0];
-    let callCenterTip = tooltips[1];
-    let fieldTip = tooltips[2];
-    let itTip = tooltips[3];
-    let operationsTip = tooltips[4];
-    let ownerTip = tooltips[5];
+    let accountingTip = roleTooltips[0];
+    let callCenterTip = roleTooltips[1];
+    let fieldTip = roleTooltips[2];
+    let itTip = roleTooltips[3];
+    let operationsTip = roleTooltips[4];
+    let ownerTip = roleTooltips[5];
+
+    let currentHover = null;
+
+    console.log(accountingTip);
 
 
     // Beginner Tool Tips
@@ -185,92 +265,14 @@ function tooltipHover() {
             tooltip.innerText = accountingTip.beginner;
             tooltip.style.display = 'block';
             console.log(accountingTip.beginner);
-        } else if (callCenter.checked){
-            tooltip.innerText = callCenterTip.beginner;
-            tooltip.style.display = 'block';
-        } else if (field.checked){
-            tooltip.innerText = fieldTip.beginner;
-            tooltip.style.display = 'block';
-        } else if (iT.checked){
-            tooltip.innerText = itTip.beginner;
-            tooltip.style.display = 'block';
-        } else if (operationsTip.checked){
-            tooltip.innerText = operationsTip.beginner;
-            tooltip.style.display = 'block';
-        } else if (operations.checked){
-            tooltip.innerText = operationsTip.beginner;
-            tooltip.style.display = 'block';
-        } else if (owner.checked){
-            tooltip.innerText = operationsTip.beginner;
-            tooltip.style.display = 'block';
-        }
-
+        } 
     })
     beginner.addEventListener('mouseout', function() {
         tooltip.style.display = 'none';
     })
     
-    // Intermediate Tool Tips
-    intermediate.addEventListener('mouseover', function(){
-        if(accounting.checked){
-            iToolTip.innerText = accountingTip.intermediate;
-            iToolTip.style.display = 'block';
-            console.log(accountingTip.intermediate);
-        } else if (callCenter.checked){
-            iToolTip.innerText = callCenterTip.intermediate;
-            iToolTip.style.display = 'block';
-        } else if (field.checked){
-            iToolTip.innerText = fieldTip.intermediate;
-            iToolTip.style.display = 'block';
-        } else if (iT.checked){
-            iToolTip.innerText = itTip.intermediate;
-            iToolTip.style.display = 'block';
-        } else if (operationsTip.checked){
-            iToolTip.innerText = operationsTip.intermediate;
-            iToolTip.style.display = 'block';
-        } else if (operations.checked){
-            iToolTip.innerText = operationsTip.intermediate;
-            iToolTip.style.display = 'block';
-        } else if (owner.checked){
-            iToolTip.innerText = operationsTip.intermediate;
-            iToolTip.style.display = 'block';
-        }
-
-    })
-    intermediate.addEventListener('mouseout', function() {
-        iToolTip.style.display = 'none';
-    })
-
-    // Advanced Tool Tip
-    advanced.addEventListener('mouseover', function(){
-        if(accounting.checked){
-            aToolTip.innerText = accountingTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (callCenter.checked){
-            aToolTip.innerText = callCenterTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (field.checked){
-            aToolTip.innerText = fieldTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (iT.checked){
-            aToolTip.innerText = itTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (operationsTip.checked){
-            aToolTip.innerText = operationsTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (operations.checked){
-            aToolTip.innerText = operationsTip.advanced;
-            aToolTip.style.display = 'block';
-        } else if (owner.checked){
-            aToolTip.innerText = operationsTip.advanced;
-            aToolTip.style.display = 'block';
-        }
-
-    });
-    advanced.addEventListener('mouseout', function() {
-        aToolTip.style.display = 'none';
-    })
 }
+
 tooltipHover();
 
 
